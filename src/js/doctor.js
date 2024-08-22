@@ -53,7 +53,7 @@ export function getAllDoctors() {
           doctorList.innerHTML += `
           <a href="#" class="enlace">
             <div class="card" style="width: 18rem;">
-                <img src="./img/doctor.png" class="card-img-top" alt="...">
+                <img src="src/img/doctor.png" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">${doctor.doctorName} ${doctor.surnames}</h5>
                   <p class="card-text">${doctor.specialty}</p>

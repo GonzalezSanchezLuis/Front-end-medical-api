@@ -67,10 +67,16 @@ export function workschedule(){
 
             const params = new URLSearchParams(window.location.search);
             let id = params.get('doctorId');
-            let url = `http://localhost:8080/api/v1/work-schedules/work-schedule/${id}`;
+
+            let url;
+            if(window.location.hostname === "localhost"){
+                url =  "http://localhost:8080"
+              }else{
+                url = "https://medical-api.up.railway.app";
+              }
 
             // Realizar la solicitud fetch
-            fetch(url, {
+            fetch(`${url}/api/v1/work-schedules/work-schedule/${id}`, {
                 method: 'GET',
                 headers: {
                     "Authorization": "Bearer " + tokenValue
@@ -141,8 +147,16 @@ export function deleteWorkSchedule() {
 
       confirmDeleteButton.addEventListener('click', function () {
         const docId = this.getAttribute('data-docId');
-        const url = `http://localhost:8080/api/v1/work-schedules/delete/${docId}`;
-        fetch(url,{
+        let  url;
+
+        if(window.location.hostname === "localhost"){
+          url =  "http://localhost:8080"
+        }else{
+          url = "https://medical-api.up.railway.app";
+        }
+
+
+        fetch(`${url}/api/v1/work-schedules/delete/${docId}`,{
           method: 'DELETE',
           headers: {
             "Authorization": "Bearer " + tokenValue
