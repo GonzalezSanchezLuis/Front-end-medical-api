@@ -7,13 +7,12 @@ export function showDoctorAvailability() {
         result.innerHTML = "";
 
         let tokenValue = localStorage.getItem('token');
-        let url;
+      
+        // URL de la API en caso de desarrollo local
+        // let url = "http://localhost:8080";
 
-        if(window.location.hostname === "localhost"){
-            url =  "http://localhost:8080"
-          }else{
-            url = "https://medical-api.up.railway.app";
-          }
+        // URL de la API en caso de producción
+        let  url = "https://medical-api.up.railway.app";
 
         fetch(`${url}/api/v1/work-schedules/work-schedule/${id}`, {
             method: 'GET',

@@ -15,12 +15,11 @@ export function workschedule(){
             let workSchedule = { dayOfWeek, startTime, endTime, date };
             let token = localStorage.getItem('token');
 
-            let url;
-            if(window.location.hostname === "localhost"){
-                url =  "http://localhost:8080"
-              }else{
-                url = "https://medical-api.up.railway.app";
-              }
+            // URL de la API en caso de desarrollo local
+            // let url = "http://localhost:8080";
+
+            // URL de la API en caso de producción
+            let  url = "https://medical-api.up.railway.app";
       
             fetch(`${url}/api/v1/work-schedules/register`, {
               method: "POST",
@@ -68,12 +67,11 @@ export function workschedule(){
             const params = new URLSearchParams(window.location.search);
             let id = params.get('doctorId');
 
-            let url;
-            if(window.location.hostname === "localhost"){
-                url =  "http://localhost:8080"
-              }else{
-                url = "https://medical-api.up.railway.app";
-              }
+             // URL de la API en caso de desarrollo local
+            // let url = "http://localhost:8080";
+
+            // URL de la API en caso de producción
+            let  url = "https://medical-api.up.railway.app";
 
             // Realizar la solicitud fetch
             fetch(`${url}/api/v1/work-schedules/work-schedule/${id}`, {
@@ -147,13 +145,12 @@ export function deleteWorkSchedule() {
 
       confirmDeleteButton.addEventListener('click', function () {
         const docId = this.getAttribute('data-docId');
-        let  url;
+        
+        // URL de la API en caso de desarrollo local
+        // let url = "http://localhost:8080";
 
-        if(window.location.hostname === "localhost"){
-          url =  "http://localhost:8080"
-        }else{
-          url = "https://medical-api.up.railway.app";
-        }
+        // URL de la API en caso de producción
+        let  url = "https://medical-api.up.railway.app";
 
 
         fetch(`${url}/api/v1/work-schedules/delete/${docId}`,{

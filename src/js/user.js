@@ -3,13 +3,13 @@ export function getAllAppointments() {
     document.addEventListener('DOMContentLoaded', (event) => {
     let resultAppointments = document.getElementById("resultAppointments");
     let tokenValue = localStorage.getItem('token');
-    let url;
 
-    if(window.location.hostname === "localhost"){
-        url =  "http://localhost:8080"
-      }else{
-        url = "https://medical-api.up.railway.app";
-      }
+    // URL de la API en caso de desarrollo local
+    // let url = "http://localhost:8080";
+
+    // URL de la API en caso de producción
+    let  url = "https://medical-api.up.railway.app";
+    
 
     fetch(`${url}/api/v1/appointment/appointments`, {
         method: 'GET',

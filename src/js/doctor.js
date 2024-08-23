@@ -1,14 +1,15 @@
 export function getAllDoctors() {
   document.addEventListener('DOMContentLoaded', (event) => {
   const tokenValue = localStorage.getItem('token');
-  let url;
 
-  if(window.location.hostname === "localhost"){
-    url =  "http://localhost:8080"
-  }else{
-    url = "https://medical-api.up.railway.app";
-  }
-  
+  // URL de la API en caso de desarrollo local
+  // let url = "http://localhost:8080";
+
+  // URL de la API en caso de producción
+  let  url = "https://medical-api.up.railway.app";
+
+
+
   // Verificar si hay un token antes de hacer la solicitud
   if (tokenValue) {
     fetch(`${url}/api/v1/doctor/doctors`, {

@@ -1,10 +1,9 @@
 export function singup(){
-    let url;
-    if(window.location.hostname === "localhost"){
-      url =  "http://localhost:8080"
-    }else{
-      url = "https://medical-api.up.railway.app";
-    }
+  // URL de la API en caso de desarrollo local
+  // let url = "http://localhost:8080";
+
+  // URL de la API en caso de producción
+  let  url = "https://medical-api.up.railway.app";
 
     let form = document.getElementById("form");
   
@@ -50,12 +49,11 @@ export function singup(){
 }
 
 export function singupDoctor(){
-  let url;
-    if(window.location.hostname === "localhost"){
-      url =  "http://localhost:8080"
-    }else{
-      url = "energetic-magic-production.up.railway.app";
-    }
+   // URL de la API en caso de desarrollo local
+  // let url = "http://localhost:8080";
+
+  // URL de la API en caso de producción
+  let  url = "https://medical-api.up.railway.app";
 
   let doctorForm = document.getElementById("doctorForm");
 

@@ -1,12 +1,11 @@
  import { getAllDoctors,data } from "./doctor.js";
 
  export function login() {
-    let url;
-  if(window.location.hostname === "localhost"){
-    url =  "http://localhost:8080"
-  }else{
-    url = "https://medical-api.up.railway.app";
-  }
+  // URL de la API en caso de desarrollo local
+  // let url = "http://localhost:8080";
+
+  // URL de la API en caso de producción
+  let  url = "https://medical-api.up.railway.app";
   
   let login = document.getElementById("login");
 

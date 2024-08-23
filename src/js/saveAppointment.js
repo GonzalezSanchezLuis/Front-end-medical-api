@@ -34,12 +34,11 @@ export function saveAppointment() {
             const date = document.getElementById('date').value;
 
 
-            let url;
-            if(window.location.hostname === "localhost"){
-                url =  "http://localhost:8080"
-              }else{
-                url = "https://medical-api.up.railway.app";
-              }
+            // URL de la API en caso de desarrollo local
+            // let url = "http://localhost:8080";
+
+            // URL de la API en caso de producción
+            let  url = "https://medical-api.up.railway.app";
 
             const registerAppointment = {
                 appointmentTime: appointmentTime + ':00', // Asegúrate de que tenga formato HH:mm:ss
